@@ -17,7 +17,7 @@ export default function JobList() {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/jobs')
+    axios.get('https://job-manage-backend.onrender.com/api/jobs')
       .then(res => setJobs(res.data));
   }, []);
 
@@ -109,7 +109,7 @@ export default function JobList() {
       </div>
       {showModal && (
         <JobCreateModal close={() => setShowModal(false)} refreshJobs={() => {
-          axios.get('http://localhost:5000/api/jobs').then(res => setJobs(res.data));
+          axios.get('https://job-manage-backend.onrender.com/api/jobs').then(res => setJobs(res.data));
           setShowModal(false);
         }} />
       )}

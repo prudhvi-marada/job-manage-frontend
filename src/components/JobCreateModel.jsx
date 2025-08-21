@@ -23,7 +23,7 @@ export default function JobCreateModal({ close, refreshJobs }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let respArr = form.responsibilities.split(/\n+/).map(s => s.trim()).filter(Boolean);
-    await axios.post('http://localhost:5000/api/jobs', {
+    await axios.post('https://job-manage-backend.onrender.com/api/jobs', {
       ...form,
       responsibilities: respArr
     });
